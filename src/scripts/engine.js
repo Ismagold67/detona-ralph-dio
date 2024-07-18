@@ -87,22 +87,50 @@ function addListenerHitBox(){
                 playSound("hit");
                 playSound("soco");
                 playSound("dano");
-                square.addEventListener('mouseup', () => {
+                setTimeout(function(){
                     square.removeChild(img)
                     square.classList.remove('anime')
-                })
+                },100)
+                square.classList.add('rotate-cursor');
+                setTimeout(function () {
+                    square.classList.remove('rotate-cursor')
+                },100)
             } else{
                 square.textContent = 'X'
                 erro(square)
                 loseLifePoints()
                 playSound("falhou")
-                square.addEventListener('mouseup', () => {
+                setTimeout(function() {
                     square.textContent = '';
-                })
+                },100)
+                square.classList.add('rotate-cursor');
+                setTimeout(function () {
+                    square.classList.remove('rotate-cursor')
+                },100)
             }
         })
     })
 }
+
+
+
+// function rotateCursor() {
+//     let refSquare = state.view.squares
+//     let refEnemy = state.view.enemy
+//     refSquare.forEach(square => {
+//         square.addEventListener('click', () => {
+//             square.classList.add('rotate-cursor');
+//             setTimeout(function () {
+//                 square.classList.remove('rotate-cursor')
+//             },100)
+//         })
+//     })
+//     refEnemy.addEventListener('click', ()=> {
+//         console.log('acheu')
+//     })
+// }
+
+
 
 function initialize() {
     addListenerHitBox();

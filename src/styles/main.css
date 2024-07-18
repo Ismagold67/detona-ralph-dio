@@ -5,6 +5,9 @@
     background-image: url(../imgs/wall.png);
 }
 
+:root{
+    --content: #730220;
+}
 .menu {
     display: flex;
     justify-content: space-evenly;
@@ -12,7 +15,7 @@
 
     height: 90px;
     width: 100%;
-    background-color: #000;
+    background-color: var(--content);
     color: #fff;
     border-bottom: 5px solid #ffd700;
 }
@@ -33,7 +36,11 @@
     border: 7px solid brown;
     box-shadow: 4px 4px 7px black;
     background: linear-gradient(360deg, rgb(10, 149, 196) 0%, rgba(0,244,241,1) 31%, rgba(0,212,255,1) 100%);
-    cursor: pointer;
+    cursor: url(../imgs/1.png), auto;
+}
+
+.rotate-cursor {
+    cursor: url(../imgs/2.png), auto;
 }
 .square img{
     width: 100%;
